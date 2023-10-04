@@ -1,4 +1,4 @@
---Primera Version de la database "TerrorTiket"
+-- Primera Version de la base de datos "TerrorTiket"
 
 -- Tabla de Categorías de Edad
 CREATE TABLE CategoriasEdad (
@@ -14,6 +14,12 @@ CREATE TABLE Precios (
     FOREIGN KEY (CategoriaID) REFERENCES CategoriasEdad(CategoriaID)
 );
 
+-- Tabla de Usuarios 
+    UsuarioID INT PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL,
+    -- Otros campos relacionados con los usuarios
+);
+
 -- Tabla de Entradas
 CREATE TABLE Entradas (
     EntradaID INT PRIMARY KEY,
@@ -24,6 +30,3 @@ CREATE TABLE Entradas (
     FOREIGN KEY (CategoriaID) REFERENCES CategoriasEdad(CategoriaID)
 );
 
--- Ejemplo de consulta SQL para agregar una entrada comprada por un usuario
-INSERT INTO Entradas (UsuarioID, CategoriaID, FechaCompra)
-VALUES (1, 2, '2023-10-01');
